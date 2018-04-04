@@ -8,11 +8,12 @@ def recover():
 		for line in f:
 			(key, value) = line.split()
 			inputs[key] = value
-
+	print(inputs)
 def safe():
 	file = open("words", "w")
 	for keys in inputs:
-		file.write("\n" + keys + " " + inputs[keys])
+		file.write(keys + " " + inputs[keys])
+		file.write("\n")
 
 def newwords():
     while True:
@@ -36,8 +37,8 @@ def query():
             print("False! Right answer: " + inputs[rk])
 
 def printall():
-    for keys in inputs:
-        print("{0} - {1}".format( keys, inputs[keys]))
+	for key, value in dict.items(inputs):
+		print("{0} - {1}".format(key, value))
 
 
 
